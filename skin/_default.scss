@@ -1,0 +1,45 @@
+// RESPONSIVE
+$screen-phone:                          320px;
+$screen-tablet:                         700px;
+$screen-desktop:                        1024px;
+
+$screen-phone-max:                      ($screen-tablet - 1);
+$screen-tablet-max:                     ($screen-desktop - 1);
+
+// FTV NOTIF
+// colors:
+$notif-bg-color:                        #111105;
+$notif-bg-error:                        #FF5B51;
+$notif-color:                           #FFFFFF;
+// font-sizes:
+$notif-font-size-desktop:               13;
+$notif-font-size-mobile:                12;
+$notif-btn-font-size:                   13;
+$notif-btn-font-size-mobile:            10;
+// font families:
+$notif-font-family:                     "Helvetica Neue", Helvetica, Arial, sans-serif;
+$notif-btn-font-family:                 $notif-font-family;
+// sizes:
+$notif-picto-size:                      40px;
+$notif-icon-size:                       55px;
+$notif-content-mobile-height:           76px;
+$notif-content-desktop-height:          40px;
+$notif-width-mobile:                    100%;
+$notif-min-height-mobile:               77px;
+$notif-width-desktop:                   450px;
+$notif-min-height-desktop:              68px;
+$notif-message-max-width-desktop:       290px;
+$notif-message-max-width-mobile:        67%;
+$notif-message-max-width-long-button-mobile:    55%;
+// translates:
+$notif-translate-default-mobile:        100px;
+$notif-translate-firstchild-mobile:     -96px;
+$notif-translate-secondchild-mobile:    0px;
+$notif-translate-default-desktop:       110px;
+$notif-translate-firstchild-desktop:    -140px;
+$notif-translate-secondchild-desktop:   -25px;
+// misc:
+$notif-z-index: 10;
+$notif-btn-padding: 5px 15px;
+$notif-message-line-height-mobile:      20px;
+$notif-message-line-height-desktop:     20px;

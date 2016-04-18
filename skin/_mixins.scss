@@ -1,0 +1,14 @@
+@mixin transform($string) {
+    -webkit-transform: $string;
+    transform: $string;
+}
+
+@mixin font-size($sizeValue) {
+    $remValue: $sizeValue/10;
+    font-size: #{$remValue}rem;
+}
+
+@mixin transition-prefix($string, $prefix) {
+    -webkit-transition: "-#{$prefix}-#{$string}";
+    transition: $string;
+}

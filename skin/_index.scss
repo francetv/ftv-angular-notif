@@ -1,0 +1,213 @@
+.notif {
+    width: $notif-width-mobile;
+    min-height: $notif-min-height-mobile;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: left;
+    background-color: $notif-bg-color;
+    color: $notif-color;
+    z-index: $notif-z-index;
+    padding: 10px;
+    font-family: $notif-font-family;
+    @include transform(translateZ(0) translateY($notif-translate-default-mobile));
+        @include font-size($notif-font-size-mobile);
+
+    &:nth-child(2) {
+        @include transform(translateY($notif-translate-secondchild-mobile));
+    }
+
+    &:nth-child(1) {
+        @include transform(translateY($notif-translate-firstchild-mobile));
+
+            &:last-child {
+                @include transform(translateY($notif-translate-secondchild-mobile));
+            }
+    }
+
+    &--error {
+        background-color: $notif-bg-error;
+
+        .notif__content__button {
+            &:active {
+                color: $notif-bg-error;
+            }
+        }
+    }
+
+    &--animated {
+        @include transition-prefix(transform 500ms ease-out, webkit);
+        opacity: 1;
+    }
+
+    &--fadeout:nth-child(1), &--fadeout:nth-child(2), &--fadeout:nth-child(1):last-child, &--fadeout {
+        @include transform(translateY($notif-translate-default-mobile));
+    }
+
+    &--removable {
+        .notif__content__button {
+            margin-top: -10px;
+        }
+    }
+
+    &__content {
+        display: inline-block;
+        width: 100%;
+        height: $notif-content-mobile-height;
+        line-height: $notif-content-mobile-height;
+
+        &__button {
+            vertical-align: middle;
+            padding: $notif-btn-padding;
+            margin-left: 20px;
+            background: none;
+            text-transform: uppercase;
+            font-family: $notif-btn-font-family;
+            color: $notif-color;
+            @include font-size($notif-btn-font-size-mobile);
+            border: 1px solid $notif-color;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -18px;
+            line-height: 24px;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+                border: 1px solid $notif-color;
+            }
+
+            &:active {
+                background-color: $notif-color;
+                color: $notif-bg-color;
+            }
+        }
+
+        &__picto {
+            width: $notif-picto-size;
+            height: $notif-picto-size;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            margin-top: -($notif-picto-size/2);
+        }
+
+        &__icon {
+            width: $notif-icon-size;
+            height: $notif-icon-size;
+            margin-right: 5px;
+        }
+
+        &--hasIcon {
+            .notif__content {
+                @media (max-width: $screen-tablet-max) {
+                    &__message {
+                        width: $notif-message-max-width-long-button-mobile;
+                    }
+                }
+            }
+        }
+
+        &__message {
+            display: inline-block;
+            line-height: $notif-message-line-height-mobile;
+            vertical-align: middle;
+
+            @media (max-width: $screen-phone-max) {
+                width: $notif-message-max-width-mobile;
+
+                &--longButton {
+                    width: $notif-message-max-width-long-button-mobile;
+                }
+            }
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        padding: 10px;
+
+        svg {
+            display: block;
+            fill: $notif-color;
+            height: 10px;
+            width: 10px;
+        }
+
+        @media (min-width: $screen-desktop) {
+            left: 0;
+            right: auto;
+        }
+    }
+
+    @media (min-width: $screen-tablet) {
+        @include font-size($notif-font-size-desktop);
+    }
+
+    @media (min-width: $screen-desktop) {
+        width: $notif-width-desktop;
+        min-height: $notif-min-height-desktop;
+        right: 25px;
+        left: inherit;
+        text-align: left;
+        padding: 15px;
+
+        &--removable {
+            padding-left: 30px;
+
+            .notif__content__button {
+                margin-top: -18px;
+            }
+        }
+
+        &:nth-child(2) {
+            @include transform(translateY($notif-translate-secondchild-desktop));
+        }
+
+        &:nth-child(1) {
+            @include transform(translateY($notif-translate-firstchild-desktop));
+
+            &:last-child {
+                @include transform(translateY($notif-translate-secondchild-desktop));
+            }
+        }
+
+        &--fadeout:nth-child(1), &--fadeout:nth-child(2), &--fadeout:nth-child(1):last-child, &--fadeout {
+            @include transform(translateY($notif-translate-default-desktop));
+        }
+
+        &__content {
+            height: $notif-content-desktop-height;
+            line-height: $notif-content-desktop-height;
+
+            &__button {
+                right: 15px;
+                @include font-size($notif-btn-font-size);
+            }
+
+            &__message {
+                line-height: $notif-message-line-height-desktop;
+                max-width: $notif-message-max-width-desktop;
+            }
+
+            &__icon {
+                margin: -8px 0 0 -7px;
+                position: absolute;
+            }
+
+            &--hasIcon {
+                .notif__content {
+                    &__message {
+                        padding-left: 55px;
+                    }
+                }
+            }
+        }
+
+    }
+}

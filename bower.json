@@ -1,0 +1,8 @@
+{
+  "name": "ftv-components-notif",
+  "dependencies": {
+    "angular": "angularjs#1.5.2",
+    "angular-mocks": "1.5.2",
+    "jquery": "~2.2.3"
+  }
+}

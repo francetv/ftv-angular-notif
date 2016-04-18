@@ -1,0 +1,9 @@
+<div class="notif" ng-class="{'notif--error': notif.error, 'notif--fadeout': !displayed, 'notif--animated': isInit, 'notif--removable': notif.removable}">
+    <ftv-svg-close class="notif__close" ng-if="notif.removable" ng-click="clickCross()"></ftv-svg-close>
+    <div class="notif__content" ng-class="{'notif__content--hasIcon': notif.icon}">
+        <img class="notif__content__icon" ng-src="{{notif.icon}}" alt="icon" ng-if="notif.icon">
+        <span class="notif__content__message" ng-class="{'notif__content__message--longButton': longButton}">{{notif.message}}</span>
+        <button ng-if="notif.buttonText" class="notif__content__button" ng-click="clickButton($event)">{{notif.buttonText}}</button>
+        <img class="notif__content__picto" ng-if="notif.picto" ng-src="{{notif.picto}}" alt="picto">
+    </div>
+</div>
