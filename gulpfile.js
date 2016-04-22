@@ -29,7 +29,7 @@ var js = {
     component: {
         name: "ftv.components.notif.js",
         files: [
-            "index.js"
+            "component.js"
         ]
     }
 };
