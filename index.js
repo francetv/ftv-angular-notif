@@ -20,8 +20,8 @@ angular.module('ftv.components.notif', [
          *    - string    sendOnValidate     analytics used (optional)
          *    - string    sendOnRemove       analytics used (optional)
          *    - string    sendOnPublish      analytics used (optional)
-         *    - int       hideFor            stamp duratin in hours (optional)
-         *    - boolean   removable          user can close the notif (optional)
+         *    - int       hideFor            duration in hours (optional)
+         *    - boolean   removable          user can close the notification (optional)
          */
         function Notif (options) {
             for (var option in options) {
@@ -118,18 +118,15 @@ angular.module('ftv.components.notif', [
                 return;
             }
 
-            if (isPublish) {
-
-                $rootScope.$emit('ftv.analyticsClickPublisher', this[message]);
-            } else {
-                $rootScope.$emit('ftv.analyticsClick', this[message]);
-            }
+            $rootScope.$emit('ftv.notif.click', this.id, this[message]);
         };
 
         Notif.prototype.sendPublish = function (message) {
-            if (this[message]) {
-                $rootScope.$emit('ftv.analyticsPrintPublisher', this[message]);
+            if (!this[message]) {
+                return;
             }
+
+            $rootScope.$emit('ftv.notif.publish', this.id, this[message]);
         };
 
         Notif.prototype.getValidatedLimit = function() {
@@ -189,7 +186,7 @@ angular.module('ftv.components.notif', [
 
             notif.update();
 
-            $rootScope.$emit('ftv.notificationsChanged', this.notifications);
+            $rootScope.$emit('ftv.notif.changed', this.notifications);
         };
 
         this.findById = function (id) {
@@ -213,7 +210,7 @@ angular.module('ftv.components.notif', [
         this._remove = function (index) {
             this.notifications.splice(index, 1);
 
-            $rootScope.$emit('notificationsChanged', this.notifications);
+            $rootScope.$emit('ftv.notif.changed', this.notifications);
         };
     }])
 

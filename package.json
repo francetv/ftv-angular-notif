@@ -1,7 +1,7 @@
 {
   "name": "ftv-components-notif",
   "version": "1.0.0",
-  "description": "A component that manages notif on webapp",
+  "description": "A component that manages notification on webapp",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -39,6 +39,7 @@
     "karma-jasmine": "^0.3.8",
     "karma-junit-reporter": "^0.4.2",
     "karma-phantomjs-launcher": "^1.0.0",
-    "phantomjs-prebuilt": "^2.1.7"
+    "phantomjs-prebuilt": "^2.1.7",
+    "run-sequence": "^1.1.5"
   }
 }

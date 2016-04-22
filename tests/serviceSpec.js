@@ -140,7 +140,7 @@ describe('Modules::notif::notifUtil::Service', function() {
 
                 notifUtil.display(dummyNotif);
 
-                expect($rootScope.$emit).toHaveBeenCalledWith('ftv.notificationsChanged', notifUtil.notifications);
+                expect($rootScope.$emit).toHaveBeenCalledWith('ftv.notif.changed', notifUtil.notifications);
             }));
         });
 
