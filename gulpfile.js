@@ -16,6 +16,7 @@ var htmlmin = require('gulp-htmlmin');
 var htmllint = require('gulp-htmllint');
 
 var buildDir = 'dist';
+var repoRootKarma =  __dirname + '/tests';
 
 var js = {
     dest: buildDir + '/js',
@@ -28,7 +29,7 @@ var js = {
     component: {
         name: "ftv.components.notif.js",
         files: [
-            "index.js"
+            "component.js"
         ]
     }
 };

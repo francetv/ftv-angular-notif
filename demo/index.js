@@ -21,7 +21,7 @@ angular.module('app', [
 
         function secondNotif () {
             var options = {
-                message: "Attention ! seconde notif s'ennira d'elle-même dans 30 seconde...",
+                message: "Attention ! seconde notif s'en ira d'elle-même dans 30 seconde...",
                 duration: 10000,
                 error: true,
                 timesShowed: 5000,
