@@ -12,55 +12,58 @@ git clone git@gitlab.ftven.net:team-infini/ftv-angular-notif.git
 
 Include javascript and css
 
-```
+```html
 <script src="dist/js/ftv.components.notif.js"></script>
 <link rel="stylesheet" href="dist/css/ftv.components.notif.css">
 ```
 
 Include component in your app
 
-```
+```js
 angular.module('app', ['ftv.components.notif'])
 ```
 
 Create a notification 
 
-```
+```js
 var firstNotif = notifUtil.create(options);
 ```
 
 And add it
 
-```
+```js
 notifUtil.add(firstNotif);
 ```
 
 ### Options
+| Type        | Key                 | Description
+|------------ |---------------------|-------------------------------------------
+| (string)    | `message`           | message of the notification
+| (string)    | `buttonText`        | text of the button (optional)
+| (string)    | `id`                | id of the notif (optional)
+| (boolean)   | `error`             | if notif error type (optional)
+| (int)       | `timesShowed`       | times to be showed (optional)
+| (string)    | `picto`             | picto to be inserted (optional)
+| (string)    | `icon`              | icon to be inserted (optional)
+| (int)       | `duration`          | duration to be showed (optional)
+| (int)       | `delay`             | delay before showing (optional)
+| (string)    | `link`              | link for the button (optional)
+| (string)    | `action`            | action to emit to the application (optional)
+| (string)    | `sendOnValidate`    | analytics used (optional)
+| (string)    | `sendOnRemove`      | analytics used (optional)
+| (string)    | `sendOnPublish`     | analytics used (optional)
+| (int)       | `hideFor`           | duration in hours (optional)
+| (boolean)   | `removable`         | user can close the notif (optional)
 
-* (string)    message            : message of the notification
-* (string)    buttonText         : text of the button (optional)
-* (string)    id                 : id of the notif (optional)
-* (boolean)   error              : if notif error type (optional)
-* (int)       timesShowed        : times to be showed (optional)
-* (string)    picto              : picto to be inserted (optional)
-* (string)    icon               : icon to be inserted (optional)
-* (int)       duration           : duration to be showed (optional)
-* (int)       delay              : delay before showing (optional)
-* (string)    link               : link for the button (optional)
-* (string)    action             : action to emit to the application (optional)
-* (string)    sendOnValidate     : analytics used (optional)
-* (string)    sendOnRemove       : analytics used (optional)
-* (string)    sendOnPublish      : analytics used (optional)
-* (int)       hideFor            : duration in hours (optional)
-* (boolean)   removable          : user can close the notif (optional)
+### Events
 
-### Events
+Event throw in `$rootScope`.
 
-Event throw in $rootScope.
-
-* ftv.notif.click : when clicked on notification
-* ftv.notif.publish : when notification is displayed
-* ftv.notif.changed : when array of notification has changed. eg: when add or push new notification.
+| Event               | Description
+|---------------------|-------------------------------------------------------
+| `ftv.notif.click`   | when clicked on notification
+| `ftv.notif.publish` | when notification is displayed
+| `ftv.notif.changed` | when array of notification has changed. eg: when add or push new notification
 
 ## Required dependencies
 
