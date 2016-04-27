@@ -89,6 +89,9 @@ gulp.task('js-libs-min', function() {
 
 gulp.task('js-component-min', function() {
     return gulp.src(js.dest + '/' + js.component.name)
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(uglify())
         .pipe(gulp.dest(js.dest));
 });
@@ -109,6 +112,9 @@ gulp.task('css', function () {
 
 gulp.task('css-min', function () {
     return gulp.src(css.dest + '/' + css.component.name)
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(minify({
             keepSpecialComments: false
         }))
