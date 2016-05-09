@@ -103,3 +103,6 @@ gulp build
 ```
 
 Open [demo](http://127.0.0.1:8080/demo.html)
+
+---------------------------------------
+This project is part of [https://gitlab.ftven.net/team-infini/zoom-public](francetv zoom open source projects) (iOS, Android and Angular)
