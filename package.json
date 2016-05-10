@@ -13,7 +13,6 @@
     "ftv",
     "angularjs"
   ],
-  "author": "Florian Valence <florian.m.valence@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.9",
