@@ -21,10 +21,6 @@
     ".htmllintrc",
     "demo.html"
   ],
-  "authors": [
-    "Florian Valence <florian.m.valence@gmail.com>",
-    "francetv zoom team"
-  ],
   "keywords": [
     "notifications",
     "angularjs",
