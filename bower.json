@@ -19,7 +19,9 @@
     "demo",
     ".gitignore",
     ".htmllintrc",
-    "demo.html"
+    "demo.html",
+    "component.js",
+    "gulpfile.js"
   ],
   "keywords": [
     "notifications",
