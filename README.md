@@ -7,7 +7,7 @@ Create notification at the bottom right of webpage.
 ## Get sources
 
 ```
-git clone git@github.com/francetv/ftv-angular-notif.git
+git clone git@github.com:francetv/ftv-angular-notif.git
 ```
 
 ## How to use
